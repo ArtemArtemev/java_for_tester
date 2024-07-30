@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 public class SquareTests {
     @Test
     void canCalculateArea(){
-        var result = Square.Area(5.0);
+        var s = new Square(5.0);
+        var result = s.area();
         Assertions.assertEquals(25.0, result);
     }
 }

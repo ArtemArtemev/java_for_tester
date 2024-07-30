@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 public class RectangleTest {
     @Test
     void canCalculateArea(){
-        var result = Rectangle.Area(4, 6);
+        var s = new Rectangle(4, 6);
+        var result = s.area();
         Assertions.assertEquals(24, result);
     }
 }
