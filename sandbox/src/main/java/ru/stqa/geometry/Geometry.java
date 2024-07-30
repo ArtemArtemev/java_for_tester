@@ -6,9 +6,9 @@ import ru.stqa.geometry.figures.Triangle;
 
 public class Geometry {
     public static void main(String[] args) {
-        Square.printSquareArea(5.0);
+        Square.printArea(5.0);
 
-        Rectangle.printRectangleArea(4.0, 6.0);
+        Rectangle.printArea(4.0, 6.0);
 
         Triangle.printTriangle(26, 28, 30);
     }
