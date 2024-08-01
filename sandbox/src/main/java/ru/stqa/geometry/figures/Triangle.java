@@ -18,17 +18,7 @@ public class Triangle {
         System.out.println(textArea);
         System.out.println(textPerimeter);
     }
-
-    public static double perimeter(double a, double b, double c){
-        return a + b + c;
-    }
-
-    public static double area(double a, double b, double c){
-       double p = perimeter(a ,b ,c) / 2;
-       double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-       return s;
-    }
-
+    
     public double perimeter() {
         return this.a + this.b + this.c;
     }
