@@ -7,7 +7,14 @@ public class SquareTests {
     @Test
     void canCalculateArea(){
         var s = new Square(5.0);
-        var result = s.area();
+        double result = s.area();
         Assertions.assertEquals(25.0, result);
+    }
+
+    @Test
+    void testFail(){
+        var s1 = new Square(5);
+        var s2 = new Square(5);
+        Assertions.assertTrue(s1.equals(s2));
     }
 }
