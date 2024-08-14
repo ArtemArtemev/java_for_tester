@@ -1,25 +1,35 @@
 package model;
 
-public class GroupData {
-    private final String group_name;
-    private final String group_futter;
-    private final String group_comment;
+import java.util.Objects;
 
-    public GroupData(String group_name, String group_futter, String group_comment) {
-        this.group_name = group_name;
-        this.group_futter = group_futter;
-        this.group_comment = group_comment;
+public record GroupData(String name, String header, String footer) {
+
+
+    public GroupData() {
+        this("", "", "");
     }
 
-    public String getGroup_name() {
-        return group_name;
+    public GroupData withName(String name) {
+        return new GroupData(name, this.header, this.footer);
     }
 
-    public String getGroup_futter() {
-        return group_futter;
+    public GroupData withHeader(String header) {
+        return new GroupData(this.name, header, this.footer);
     }
 
-    public String getGroup_comment() {
-        return group_comment;
+    public GroupData withFooter(String footer) {
+        return new GroupData(this.name, this.header, footer);
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public String header() {
+        return header;
+    }
+
+    public String footer() {
+        return footer;
     }
 }

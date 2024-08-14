@@ -3,12 +3,7 @@ package ru.stqa.geometry.figures;
 
 import java.util.Objects;
 
-public class Square {
-    double side;
-
-    public Square(double side) {
-        this.side = side;
-    }
+public record Square(double side) {
 
     public static void printArea(Square s) {
         System.out.println(String.format("Площадь квадрата со стороной %f = %f", s.side, s.area()));
