@@ -15,6 +15,7 @@ public class ApplicationManager {
     private ContactHelper contact;
 
      public void init(String browser) {
+         // реализация нескольких браузеров
         if (driver == null) {
             if ("chrome".equals(browser)) {
                 driver = new ChromeDriver();
