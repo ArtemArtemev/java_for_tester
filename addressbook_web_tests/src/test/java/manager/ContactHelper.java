@@ -10,7 +10,7 @@ public class ContactHelper extends HelperBase {
         super(manager);
     }
 
-    public void createContact(ContactData contact, ApplicationManager manager) {
+    public void createContact(ContactData contact) {
         openContactPage();
         fillContact(contact);
         submitContactCreation();
