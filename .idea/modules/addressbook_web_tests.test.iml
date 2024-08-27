@@ -60,5 +60,8 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.9.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.opentelemetry:opentelemetry-api-incubator:1.40.0-alpha" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="2a8852d9-ee90-4148-a5d3-980e0257e038" />
+  </component>
   <component name="TestModuleProperties" production-module="addressbook_web_tests.main" />
 </module>

@@ -75,11 +75,11 @@ public class ContactHelper extends HelperBase {
         }
         manager.driver.findElement(By.name("ayear")).click();
         manager.driver.findElement(By.name("ayear")).sendKeys("2000");
-        click(By.name("new_group"));
-        {
-            WebElement dropdown = manager.driver.findElement(By.name("new_group"));
-            dropdown.findElement(By.xpath("//option[. = 'group namemodified name']")).click();
-        }
+//        click(By.name("new_group"));
+//        {
+//            WebElement dropdown = manager.driver.findElement(By.name("new_group"));
+//            dropdown.findElement(By.xpath("//option[. selected[]]")).click();
+//        }
 
     }
 
