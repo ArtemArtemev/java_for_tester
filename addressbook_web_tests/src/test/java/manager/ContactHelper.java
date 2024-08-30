@@ -121,4 +121,20 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
+    public void modifyContact(ContactData contact, ContactData modifyContact) {
+        getSelectModifyContact();
+        fillContact(modifyContact);
+        getSaveContactModification();
+        returnHomePage();
+
+    }
+
+    private void getSaveContactModification() {
+            click(By.name("update"));
+    }
+
+    private void getSelectModifyContact() {
+        click(By.cssSelector("tr:nth-child(2) > .center:nth-child(8) img"));
+    }
 }
