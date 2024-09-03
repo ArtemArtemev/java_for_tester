@@ -1,7 +1,6 @@
 package tests;
 
 import model.ContactData;
-import model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +21,7 @@ public class ContactModificanionTest extends TestBase{
         var testData = new ContactData().withfirstname("Max").withLastname("Dolohov");
         app.contacts().modifyContact(oldContacts.get(index), testData);
         var newContact = app.contacts().getList();
-        var expectedList = new ArrayList<>(oldContacts);
+        var expectedList = new ArrayList<ContactData>(oldContacts);
         expectedList.set(index,testData.withId(oldContacts.get(index).id()));
         Comparator<ContactData> compareById = (o1, o2) -> {
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));

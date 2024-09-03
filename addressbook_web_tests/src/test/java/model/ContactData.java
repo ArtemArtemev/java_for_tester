@@ -59,11 +59,11 @@ public record ContactData(String id, String firstname, String middlename, String
         return new ContactData(this.id, this.firstname,this.middlename, this.lastname, this.nickname, this.title, this.company, this.address,
                 this.home, this.mobile, this.work, this.fax, email, this.email2, this.email3, this.homepage);
     }
-    public ContactData withEmail2(String email) {
+    public ContactData withEmail2(String email2) {
         return new ContactData(this.id, this.firstname,this.middlename, this.lastname, this.nickname, this.title, this.company, this.address,
                 this.home, this.mobile, this.work, this.fax, this.email, email2, this.email3, this.homepage);
     }
-    public ContactData withEmail3(String email) {
+    public ContactData withEmail3(String email3) {
         return new ContactData(this.id, this.firstname,this.middlename, this.lastname, this.nickname, this.title, this.company, this.address,
                 this.home, this.mobile, this.work, this.fax, this.email, this.email2, email3, this.homepage);
     }

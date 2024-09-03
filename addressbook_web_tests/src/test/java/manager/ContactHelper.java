@@ -123,18 +123,20 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modifyContact(ContactData contact, ContactData modifyContact) {
-        getSelectModifyContact();
+        getSelectModifyContact(contact);
         fillContact(modifyContact);
         getSaveContactModification();
         returnHomePage();
-
     }
 
     private void getSaveContactModification() {
             click(By.name("update"));
     }
 
-    private void getSelectModifyContact() {
-        click(By.cssSelector("tr:nth-child(2) > .center:nth-child(8) img"));
+    private void getSelectModifyContact(ContactData contact) {
+        var elementId = manager.driver.findElement(By.id(contact.id()));
+        var entry = elementId.findElement(By.xpath("../.."));
+        var editButton = entry.findElement(By.cssSelector("td:nth-child(8)"));
+        editButton.click();
     }
 }
