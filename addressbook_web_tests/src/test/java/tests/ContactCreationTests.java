@@ -28,17 +28,17 @@ public class ContactCreationTests extends TestBase {
     @ParameterizedTest
     @MethodSource("contactProvider")
     public void CanCreateContact(ContactData contact) {
-        var oldContact = app.contacts().getList();
+        var oldContact = app.hbm().getContactList();
         app.contacts().createContact(contact);
-        var newContact = app.contacts().getList();
+        var newContact = app.hbm().getContactList();
         Comparator<ContactData> compareById = (o1, o2) -> {
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
         newContact.sort(compareById);
+        var maxId = newContact.get(newContact.size() - 1).id();
 
         var expectedList = new ArrayList<>(oldContact);
-        expectedList.add(contact.withId(newContact.get(newContact.size() - 1).id()).withMiddlename("").withNickname("").withTitle("").withCompany("").withAddress("")
-                .withHome("").withMobile("").withWork("").withFax("").withFax("").withEmail("").withEmail2("").withEmail3("").withHomepage("").withPhoto(""));
+        expectedList.add(contact.withId(maxId).withPhoto(""));
         expectedList.sort(compareById);
         Assertions.assertEquals(newContact, expectedList);
     }

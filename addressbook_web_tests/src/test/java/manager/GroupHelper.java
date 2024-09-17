@@ -8,10 +8,7 @@ import java.util.List;
 
 public class GroupHelper extends HelperBase {
 
-    public GroupHelper(ApplicationManager manager) {
-        super(manager);
-
-    }
+    public GroupHelper(ApplicationManager manager) {super(manager); }
 
     public void createGroup(GroupData group) {
         openGroupsPage();

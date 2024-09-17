@@ -69,10 +69,10 @@ public record ContactData(String id, String firstname, String middlename, String
     }
     public ContactData withHomepage(String homepage) {
         return new ContactData(this.id, this.firstname,this.middlename, this.lastname, this.nickname, this.title, this.company, this.address,
-                this.home, this.mobile, this.work, this.fax, this.email, this.email2, email3, homepage, this.photo);
+                this.home, this.mobile, this.work, this.fax, this.email, this.email2, this.email3, homepage, this.photo);
     }
     public ContactData withPhoto(String photo) {
         return new ContactData(this.id, this.firstname,this.middlename, this.lastname, this.nickname, this.title, this.company, this.address,
-                this.home, this.mobile, this.work, this.fax, this.email, this.email2, email3, homepage, photo);
+                this.home, this.mobile, this.work, this.fax, this.email, this.email2, this.email3, this.homepage, photo);
     }
 }
