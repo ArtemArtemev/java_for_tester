@@ -127,7 +127,7 @@ public class ContactHelper extends HelperBase {
         getSelectModifyContact(contact);
         fillContact(modifyContact);
         getSaveContactModification();
-        returnHomePage();
+        //returnHomePage();
     }
 
     private void getSaveContactModification() {
