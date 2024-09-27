@@ -4,6 +4,7 @@ import model.ContactData;
 import model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,29 @@ public class ContactHelper extends HelperBase {
         fillContact(contact);
         submitContactCreation();
         returnHomePage();
+    }
+
+    public void createContact(ContactData contact, GroupData group) {
+        openContactPage();
+        fillContact(contact);
+        selectGroup(group);
+        submitContactCreation();
+        returnHomePage();
+    }
+
+    public void addContact(ContactData contact, GroupData group){
+        selectContact(contact);
+        selectGroupToContact(group);
+        selectedAddTo();
+        //returnHomePage();
+    }
+
+    private void selectGroupToContact(GroupData group){
+        new Select(manager.driver.findElement(By.name("to_group"))).selectByValue(group.id());
+    }
+
+    private void selectGroup(GroupData group) {
+        new Select(manager.driver.findElement(By.name("new_group"))).selectByValue(group.id());
     }
 
     public void removeContact(ContactData contact) {
@@ -97,6 +121,8 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//input[@value=\'Delete\']"));
     }
 
+    private void selectedAddTo(){click(By.name("add"));}
+
     private void selectContact(ContactData contact) {
 
         click(By.cssSelector(String.format("input[value='%s']", contact.id())));
@@ -139,5 +165,21 @@ public class ContactHelper extends HelperBase {
         var entry = elementId.findElement(By.xpath("../.."));
         var editButton = entry.findElement(By.cssSelector("td:nth-child(8)"));
         editButton.click();
+    }
+
+    public void removeContactInGroup(ContactData contact, GroupData group) {
+        selectGroupContact(group);
+        selectContact(contact);
+        removeFromGroup();
+    }
+
+    private void selectContactInGroup() {
+        manager.driver.findElement(By.name("selected[]"));
+    }
+
+    private void removeFromGroup() {click(By.name("remove"));}
+
+    private void selectGroupContact(GroupData group) {
+        new Select(manager.driver.findElement(By.name("group"))).selectByValue(group.id());
     }
 }
